@@ -28,12 +28,14 @@ module.exports = function(app, passport) {
     app.route('/crawls/:crawlID')
         .get((req, res) => {
             const crawlID = req.params.crawlID;
-            Crawl.find({
-                _id: crawlID
-            }, (err, crawl) => {
-                if (err) res.sendStatus(400);
-                else res.status(200).json(crawl);
-            });
+            Crawl.find({_id: crawlID})
+                .populate('firstBar')
+                .populate('creator', 'username')
+                .populate(bars)
+                .exec((err, crawl) => {
+                    if (err) res.sendStatus(400);
+                    else res.status(200).json(crawl);
+                });
         })
         .put();
 
