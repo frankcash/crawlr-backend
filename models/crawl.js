@@ -19,7 +19,8 @@ var CrawlSchema = new Schema({
         trim: true,
         ref: "Bar"
     },
-    created: Date
+    created: Date,
+    rating: Number
 });
 
 module.exports = mongoose.model('Crawl', CrawlSchema);
