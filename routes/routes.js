@@ -13,7 +13,8 @@ module.exports = function(app, passport) {
         })
         .post((req, res) => {
             console.log(req.body);
-            let crawl = new Crawl(req.body);
+            var crawl = new Crawl(req.body);
+            crawl.created = new Date();
             crawl.save((err, crawl) => {
                 if (err) res.sendStatus(400);
                 else res.status(200).json(crawl);
@@ -60,6 +61,7 @@ module.exports = function(app, passport) {
             user.save((err, user) => {
                 if (err) res.sendStatus(400);
                 else {
+                    // Remove sensitive data before login
                     user.password = undefined;
                     user.salt = undefined;
 
