@@ -1,5 +1,10 @@
 'use strict';
 
+let passport = require('passport');
+let User = require('../models/user');
+let LocalStrategy = require('passport-local').Strategy;
+
+
 module.exports = function(passport) {
     let User = require('../models/user');
     let LocalStrategy = require('passport-local').Strategy;
