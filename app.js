@@ -17,9 +17,9 @@ var session = require('express-session');
 var app = express(); // sets up the server
 
 
-mongoose.connect(config.db);;
+mongoose.connect(config.db);
 
-app.use(express.logger('dev'))
+app.use(express.logger('dev'));
 
 app.use(cookieParser());
 
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // setting up passport authentication
-require('./config/passport')(passport)
+require('./config/passport')(passport);
 app.use(session({ secret: 'invitable invitables'}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -40,4 +40,4 @@ app.use(function(req, res, next) {
 });
 
 console.log("Crawlr-Backend is now running");
-app.listen(3000)
+app.listen(3000);
