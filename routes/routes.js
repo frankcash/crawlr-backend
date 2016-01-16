@@ -6,7 +6,7 @@ let User = require('../models/user');
 module.exports = function(app, passport) {
     app.route('/crawls')
         .get((req, res) => {
-            Crawl.find({}, (err, crawls) => {
+            Crawl.find({}).populate('firstBar').exec((err, crawls) => {
                 if (err) res.sendStatus(400);
                 else res.status(200).json(crawls);
             });

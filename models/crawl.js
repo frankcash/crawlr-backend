@@ -20,7 +20,12 @@ var CrawlSchema = new Schema({
         ref: "Bar"
     },
     created: Date,
-    rating: Number
+    rating: Number,
+    firstBar: {
+      type: Schema.Types.ObjectId,
+      trim: true,
+      ref: "Bar"
+    }
 });
 
 module.exports = mongoose.model('Crawl', CrawlSchema);
