@@ -41,12 +41,14 @@ module.exports = function(app, passport) {
 
     app.route('/bars')
         .post((req, res) => {
-            console.log(req.body);
-            let bar = new Bar(req.body);
-            bar.save((err, bar) => {
-                if (err) res.sendStatus(400);
-                else res.status(200).json(bar);
-            });
+            Bar.collection.insert(req.body, function(err, docs){
+              if (err) {
+                  return(res.sendStatus(400));
+              } else {
+                  // console.info('data were successfully stored.', docs.length);
+                  return res.status(200).json(docs.insertedIds);
+              }
+            })
         });
 
     app.route('/bars/:barID')
@@ -60,6 +62,7 @@ module.exports = function(app, passport) {
             });
         })
         .put();
+
 
     app.route('/signup')
         .post((req, res) => {
@@ -81,7 +84,6 @@ module.exports = function(app, passport) {
                 }
             });
         });
-
     app.route('/signin')
         .post((req, res, next) => {
             passport.authenticate('local', (err, user, info) => {
