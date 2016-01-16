@@ -1,3 +1,4 @@
+'use strict';
 let passport = require('passport');
 let User = require('../models/User');
 let LocalStrategy = require('passport-local').Strategy;

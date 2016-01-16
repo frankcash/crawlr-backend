@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  * * Module dependencies
  * */
@@ -8,7 +10,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var bodyParser = require('body-parser');
-var queryParser = require('query-parser');
+// var queryParser = require('query-parser');
 var session = require('express-session');
 // var nodemailer = require('nodemailer');
 // var async = require('async');
@@ -20,9 +22,9 @@ var app = express(); // sets up the server
 
 mongoose.connect(config.db);
 
-app.use(express.logger('dev'));
+// app.use(express.logger('dev'));
 
-app.use(cookieParser());
+// app.use(queryParser());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
