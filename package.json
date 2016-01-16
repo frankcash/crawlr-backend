@@ -17,6 +17,7 @@
 	},
 	"scripts": {
 		"test": ""
+    "start": "node app.js"
 	},
 	"bugs": {
 		"url": "https://github.com/frankcash/crawlr-backend/issues"
