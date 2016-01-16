@@ -1,4 +1,5 @@
 'use strict';
+
 let Bar = require('../models/bar');
 let Crawl = require('../models/crawl');
 let User = require('../models/user');
@@ -6,10 +7,13 @@ let User = require('../models/user');
 module.exports = function(app, passport) {
     app.route('/crawls')
         .get((req, res) => {
-            Crawl.find({}).populate('firstBar').exec((err, crawls) => {
-                if (err) res.sendStatus(400);
-                else res.status(200).json(crawls);
-            });
+            Crawl.find({})
+                .populate('firstBar')
+                .populate('creator', 'username')
+                .exec((err, crawls) => {
+                    if (err) res.sendStatus(400);
+                    else res.status(200).json(crawls);
+                });
         })
         .post((req, res) => {
             console.log(req.body);
@@ -58,6 +62,7 @@ module.exports = function(app, passport) {
     app.route('/signup')
         .post((req, res) => {
             var user = new User(req.body);
+            user.provider = "local";
             user.save((err, user) => {
                 if (err) res.sendStatus(400);
                 else {
