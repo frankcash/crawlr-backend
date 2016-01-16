@@ -1,36 +1,39 @@
 {
-	"name": "Crawlr-Backend",
-	"version": "0.0.1",
-	"private": "false",
-	"license": "MIT",
-	"contributors": [
-		{
-			"name": "Frank Cash",
-			"email": "cashc@acm.org"
-		},{
+  "name": "Crawlr-Backend",
+  "version": "0.0.1",
+  "private": "false",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Frank Cash",
+      "email": "cashc@acm.org"
+    },
+    {
       "name": "Jacob Jenkins"
     }
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/frankcash/crawlr-backend.git"
-	},
-	"scripts": {
-		"test": ""
-    "start": "node app.js"
-	},
-	"bugs": {
-		"url": "https://github.com/frankcash/crawlr-backend/issues"
-	},
-	"dependencies": {
-		"express": "4.12.3",
-		"request":"2.67.0"
-	},
-	"devDependencies": {
-		"mocha": "*",
-		"chai": "*",
-		"grunt": "~0.4.5",
-		"grunt-contrib-jshint": "~0.10.0",
-		"grunt-html-angular-validate": "^0.4.0"
-	}
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankcash/crawlr-backend.git"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "bugs": {
+    "url": "https://github.com/frankcash/crawlr-backend/issues"
+  },
+  "dependencies": {
+    "express": "4.12.3",
+    "mongoose": "^4.3.6",
+    "mongoose-unique-validator": "^0.6.2",
+    "request": "2.67.0",
+    "validator": "^4.5.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-html-angular-validate": "^0.4.0"
+  }
 }
