@@ -28,7 +28,7 @@ module.exports = function(app, passport) {
     app.route('/crawls/:crawlID')
         .get((req, res) => {
             const crawlID = req.params.crawlID;
-            Crawl.find({_id: crawlID})
+            Crawl.findOne({_id: crawlID})
                 .populate('bars')
                 .populate('creator', 'username')
                 .populate('firstBar')
