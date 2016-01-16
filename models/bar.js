@@ -6,6 +6,14 @@ var BarSchema = new Schema({
   name: {
       type: String,
       trim: true
+  },
+  lat:{
+    type: Number,
+    trim: true
+  },
+  long:{
+    type: Number,
+    trim: true
   }
 });
 

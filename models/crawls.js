@@ -12,6 +12,11 @@ var CrawlSchema = new Schema({
       trim: true,
       ref: "User"
   },
+  bars: {
+      type: Schema.Types.ObjectId,
+      trim: true,
+      ref: "Bar"
+  }
 });
 
 module.exports = mongoose.model('Crawl', CrawlSchema);
