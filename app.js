@@ -8,6 +8,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var bodyParser = require('body-parser');
+var queryParser = require('query-parser');
 var session = require('express-session');
 // var nodemailer = require('nodemailer');
 // var async = require('async');
