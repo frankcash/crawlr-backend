@@ -14,11 +14,11 @@ var CrawlSchema = new Schema({
         trim: true,
         ref: "User"
     },
-    bars: {
-        type: [Schema.Types.ObjectId],
+    bars: [{
+        type: Schema.Types.ObjectId,
         trim: true,
         ref: "Bar"
-    },
+    }],
     created: Date,
     rating: Number,
     firstBar: {

@@ -29,9 +29,9 @@ module.exports = function(app, passport) {
         .get((req, res) => {
             const crawlID = req.params.crawlID;
             Crawl.find({_id: crawlID})
-                .populate('firstBar')
+                .populate('bars')
                 .populate('creator', 'username')
-                .populate(bars)
+                .populate('firstBar')
                 .exec((err, crawl) => {
                     if (err) res.sendStatus(400);
                     else res.status(200).json(crawl);
