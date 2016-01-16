@@ -20,15 +20,15 @@ var UserSchema = new Schema({
         unique: true
     },
     password: {
-        'type': String,
-        'default': ''
+        type: String,
+        default: ''
     },
     salt: {
-        'type': String
+        type: String
     },
     provider: {
-        'type': String,
-        'required': 'Provider is required'
+        type: String,
+        required: 'Provider is required'
     }
 });
 
