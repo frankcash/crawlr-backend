@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 
 // setting up passport authentication
 require('./config/passport')(passport)
-app.use(session({ secret: 'invitable invitables'}));
+app.use(session({ secret: 'invitable invitables'})); // TODO: get session secret from config
 app.use(passport.initialize());
 app.use(passport.session());
 require('./routes/routes')(app, passport);
