@@ -64,7 +64,6 @@ UserSchema.method('authenticate', function(password) {
     return this.password === this.hashPassword(password);
 });
 
-
 UserSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('User', UserSchema);
